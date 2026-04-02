@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request, UploadFile, File, Form, HTTPException
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from jinja2 import FileSystemLoader, Environment
@@ -10,7 +10,6 @@ import re
 from typing import Optional
 
 app = FastAPI(title="Medicine Inventory")
-
 # -------------------------------------------------------
 # 🔑  Change this to your desired admin password
 ADMIN_PASSWORD = "rahbar"
@@ -126,7 +125,6 @@ async def index(request: Request):
         "medicines": medicines,
         "count": len(medicines),
     })
-
 
 # ---------- Auth route ----------
 
