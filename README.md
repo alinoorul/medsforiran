@@ -1,6 +1,6 @@
-# MedStock — Medicine Inventory App
+# Meds For Iran --  supporting donations of medical supplies to Iran
 
-A mobile-responsive medicine inventory web app built with **FastAPI + HTMX**.
+FastAPI + HTMX mobile-responsive medicine inventory web app
 
 ## Features
 - **Import PDF** — paste in a PDF with medicine data (serial, code, name, manufacturers, qty)
