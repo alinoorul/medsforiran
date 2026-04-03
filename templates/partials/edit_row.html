@@ -1,0 +1,37 @@
+<tr class="edit-row" id="med-row-{{ medicine.id }}">
+  <td data-label="Serial">
+    <input class="edit-field-{{ medicine.id }}" name="serial" value="{{ medicine.serial }}" style="width:70px;" />
+  </td>
+  <td data-label="Generic Code">
+    <input class="edit-field-{{ medicine.id }}" name="generic_code" value="{{ medicine.generic_code }}" required style="width:110px;" />
+  </td>
+  <td data-label="Medicine Name">
+    <input class="edit-field-{{ medicine.id }}" name="name" value="{{ medicine.name }}" required style="min-width:150px;" />
+  </td>
+  <td data-label="Manufacturers">
+    <input class="edit-field-{{ medicine.id }}" name="manufacturers" value="{{ medicine.manufacturers }}" style="min-width:150px;" />
+  </td>
+  <td data-label="Qty Required">
+    <input class="edit-field-{{ medicine.id }}" name="quantity" value="{{ medicine.quantity }}" style="width:100px;" />
+  </td>
+  <td data-label="Actions" style="display:table-cell;">
+    <div class="actions">
+      <button
+        type="button"
+        class="btn btn-primary btn-sm"
+        hx-put="/medicines/{{ medicine.id }}"
+        hx-include=".edit-field-{{ medicine.id }}"
+        hx-target="#medicine-list"
+        hx-swap="innerHTML"
+        hx-on::after-request="showToast('Medicine updated')"
+      >Save</button>
+      <button
+        type="button"
+        class="btn btn-ghost btn-sm"
+        hx-get="/medicines"
+        hx-target="#medicine-list"
+        hx-swap="innerHTML"
+      >✕ Cancel</button>
+    </div>
+  </td>
+</tr>
